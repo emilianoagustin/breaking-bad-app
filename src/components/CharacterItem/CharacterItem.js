@@ -5,7 +5,7 @@ const CharacterItem = ({ item }) => {
 		<div className='card'>
 			<div className='card-inner'>
 				<div className='card-front'>
-					<img src={item.img} alt='character-image' />
+					<img src={item.img} />
 				</div>
 
 				<div className='card-back'>
