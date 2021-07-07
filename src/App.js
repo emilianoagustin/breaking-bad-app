@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../src/components/Header/Header.js';
+import CharacterGrid from './components/CharacterGrid/CharacterGrid.js';
 import './App.css';
 const URL = "https://www.breakingbadapi.com/api/";
 
@@ -11,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(URL + "characters")
-      setItem(response.data)
+      setItems(response.data)
       setIsLoading(false)
     }
 
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
+      <CharacterGrid isLoading={isLoading} items={items}/>
     </div>
   );
 }
